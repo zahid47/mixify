@@ -5,16 +5,16 @@ export default function Nav() {
 	return (
 		<div>
 			<header>
-				<a href="http://localhost:3000/">
+				<a href="/">
 					<img className="logo" src={logo} alt="mixify logo" />
 				</a>
 				<nav>
 					<ul className="nav_links">
 						<li>
-							<a href="http://localhost:3000/">source</a>
+							<a href="https://github.com/zahid47/mixify">source</a>
 						</li>
 						{/* <li>
-							<a href="http://localhost:3000/">Contact</a>
+							<a href="/">Contact</a>
 						</li> */}
 					</ul>
 				</nav>

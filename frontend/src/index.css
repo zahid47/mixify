@@ -6,6 +6,7 @@
 	--mixify-grey: #181818;
 	--mixify-dark-grey: #121212;
 	--mixify-green: #1db95b;
+	--mixify-light-grey: #c2c2c2;
 }
 
 * {
@@ -92,10 +93,18 @@ footer {
 /* welcome */
 
 .welcome_text {
-	font-size: 52px;
+	font-size: 3em;
 	font-weight: 600;
 	color: var(--mixify-white);
-	padding: 0.5em 0em 1em 0em;
+	padding: 0.5em 0 0 0;
+	text-align: center;
+}
+
+.welcome_desc {
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--mixify-light-grey);
+	padding: 0.1em 0 2em 0;
 	text-align: center;
 }
 
@@ -106,17 +115,31 @@ footer {
 	justify-content: space-around;
 	color: var(--mixify-white);
 	text-decoration: none;
-	font-size: 28px;
+	font-size: 1.5em;
 	font-weight: 400;
 }
 
 table {
-	/* background-color: var(--mixify-dark-grey); */
-	border-radius: 4px;
+	align-self: center;
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: auto;
+}
+
+tr {
+	border-bottom: 2px solid var(--mixify-dark-grey);
 }
 
 td {
-	padding: 0.5rem;
+	padding: 0.6em;
+
+	max-width: 10em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.playlist_name {
 	text-align: left;
 }
 
@@ -124,11 +147,9 @@ td {
 	background-color: none;
 	color: var(--mixify-green);
 	text-decoration: none;
-	padding: 0px 69px;
 	border: none;
-	font-size: 20px;
+	font-size: 0.8em;
 	font-weight: 700;
-	border-radius: 5em;
 	display: inline-block;
 	cursor: pointer;
 }

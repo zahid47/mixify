@@ -14,7 +14,7 @@ dotenv.config();
 
 const app = express();
 const base_url = process.env.base_url;
-const port = process.env.port || 8000;
+const PORT = process.env.PORT || 8000;
 
 const client_id = process.env.client_id;
 const client_secret = process.env.client_secret;
@@ -298,6 +298,6 @@ app.get("/user", (req, res) => {
 		.catch((err) => res.status(400).json({ error: "error getting the user" }));
 });
 
-app.listen(port, () => {
-	console.log(`app started on port ${port}`);
+app.listen(PORT, () => {
+	console.log(`app started on port ${PORT}`);
 });

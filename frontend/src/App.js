@@ -24,7 +24,7 @@ function App() {
 
 		const fetch_playlists = () => {
 			axios
-				.get(`http://localhost:8000/playlists?bread=${bread}`)
+				.get(`https://mixify-api.herokuapp.com/playlists?bread=${bread}`)
 				.then((response) => {
 					const _playlists = response.data;
 					setPlaylists({ playlists: _playlists });
@@ -34,7 +34,7 @@ function App() {
 
 		const fetch_username = () => {
 			axios
-				.get(`http://localhost:8000/user?bread=${bread}`)
+				.get(`https://mixify-api.herokuapp.com/user?bread=${bread}`)
 				.then((response) => {
 					const _username = response.data.username;
 					setUsername(_username);
@@ -63,7 +63,7 @@ function App() {
 					<Body />
 				</>
 			)}
-			<Footer/>
+			<Footer />
 		</>
 	);
 }
