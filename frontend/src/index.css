@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap");
+
+:root {
+	--mixify-black: black;
+	--mixify-white: white;
+	--mixify-grey: #181818;
+	--mixify-dark-grey: #121212;
+	--mixify-green: #1db95b;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: var(--mixify-grey);
+	font-family: "Outfit", sans-serif;
+}
+
+/* nav */
+
+li,
+a {
+	font-weight: 400;
+	font-size: 18px;
+	color: var(--mixify-white);
+	text-decoration: none;
+	background-color: var(--mixify-black);
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+	background-color: var(--mixify-black);
+}
+
+.logo {
+	background-color: var(--mixify-black);
+	cursor: pointer;
+}
+
+.nav_links {
+	list-style: none;
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+
+.nav_links li a {
+	transition: all 0.3s ease 0s;
+}
+
+/* body */
+
+.container {
+	padding: 5em, 2em;
+	text-align: center;
+}
+
+.login_text {
+	font-size: 52px;
+	font-weight: 600;
+	color: var(--mixify-white);
+	padding: 3em 0em 1em 0em;
+}
+
+.login_btn {
+	background-color: var(--mixify-green);
+	color: var(--mixify-white);
+	text-decoration: none;
+	padding: 24px 69px;
+	border: none;
+	font-size: 20px;
+	font-weight: 700;
+	border-radius: 5em;
+	display: inline-block;
+	cursor: pointer;
+}
+
+/* footer */
+
+footer {
+	text-align: center;
+	color: var(--mixify-white);
+	display: block;
+	padding: 40px 0px 20px 0px;
+}
+
+/* welcome */
+
+.welcome_text {
+	font-size: 52px;
+	font-weight: 600;
+	color: var(--mixify-white);
+	padding: 0.5em 0em 1em 0em;
+	text-align: center;
+}
+
+/* playlists */
+
+.playlists {
+	display: flex;
+	justify-content: space-around;
+	color: var(--mixify-white);
+	text-decoration: none;
+	font-size: 28px;
+	font-weight: 400;
+}
+
+table {
+	/* background-color: var(--mixify-dark-grey); */
+	border-radius: 4px;
+}
+
+td {
+	padding: 0.5rem;
+	text-align: left;
+}
+
+.mixify_btn {
+	background-color: none;
+	color: var(--mixify-green);
+	text-decoration: none;
+	padding: 0px 69px;
+	border: none;
+	font-size: 20px;
+	font-weight: 700;
+	border-radius: 5em;
+	display: inline-block;
+	cursor: pointer;
+}
