@@ -5,6 +5,7 @@
 /frontend/coverage
 
 /frontend/build
+/frontend/build.zip
 
 /frontend/.DS_Store
 /frontend/.env.local
