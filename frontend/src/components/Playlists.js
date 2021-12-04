@@ -17,7 +17,8 @@ export default function Playlists({ playlists, bread }) {
 			) : (
 				<div>
 					<h3 className="login_desc">
-						Token Expired. Please{" "}
+						You either don't have any public playlist (make a public playlist on
+						Spotify!) or your token was expired, please{" "}
 						<a
 							className="relogin"
 							href="https://mixify-api.herokuapp.com/login"
