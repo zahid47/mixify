@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import Alert from "./Alert";
 import mixify_icon from "../images/mixify_icon.svg";
 
 export default function Playlist({ playlist, bread }) {
@@ -17,6 +18,7 @@ export default function Playlist({ playlist, bread }) {
 					className="btn"
 					onClick={() => {
 						setBtn("...");
+
 						axios
 							.get(
 								`https://mixify-api.herokuapp.com/remix/${playlist.id}?bread=${bread}`
@@ -24,7 +26,8 @@ export default function Playlist({ playlist, bread }) {
 							.then(() => {
 								setBtn("mixified!");
 								setDisabled(true);
-							});
+							})
+							.catch((err) => setBtn("error, please relogin"));
 					}}
 				>
 					{btn === "mixify" ? (
@@ -33,6 +36,7 @@ export default function Playlist({ playlist, bread }) {
 					{btn}
 				</button>
 			</div>
+			{btn === "mixified!" ? <Alert /> : <></>}
 		</div>
 	);
 }
