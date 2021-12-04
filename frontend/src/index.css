@@ -20,7 +20,7 @@
 /* nav */
 
 li,
-a {
+.nav_item {
 	font-weight: 400;
 	font-size: 18px;
 	color: var(--mixify-white);
@@ -34,6 +34,7 @@ header {
 	align-items: center;
 	padding: 30px 10%;
 	background-color: var(--mixify-black);
+	width: 100%;
 }
 
 .logo {
@@ -65,7 +66,15 @@ header {
 	font-size: 52px;
 	font-weight: 600;
 	color: var(--mixify-white);
-	padding: 3em 0em 1em 0em;
+	padding: 3em 0 0.2em 0;
+}
+
+.login_desc {
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--mixify-light-grey);
+	padding: 0 0 1.5em 0;
+	text-align: center;
 }
 
 .login_btn {
@@ -85,7 +94,7 @@ header {
 
 footer {
 	text-align: center;
-	color: var(--mixify-white);
+	color: var(--mixify-light-grey);
 	display: block;
 	padding: 40px 0px 20px 0px;
 }
@@ -110,46 +119,61 @@ footer {
 
 /* playlists */
 
-.playlists {
-	display: flex;
-	justify-content: space-around;
-	color: var(--mixify-white);
-	text-decoration: none;
-	font-size: 1.5em;
-	font-weight: 400;
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
 }
 
-table {
-	align-self: center;
-	border-collapse: collapse;
-	table-layout: fixed;
-	width: auto;
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
-tr {
-	border-bottom: 2px solid var(--mixify-dark-grey);
+@media (max-width: 200px) {
+	.column {
+		width: 100%;
+	}
 }
 
-td {
-	padding: 0.6em;
-
-	max-width: 10em;
+.name {
+	white-space: nowrap;
+	max-width: 300px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-.playlist_name {
+	font-size: 20px;
+	color: var(--mixify-white);
 	text-align: left;
 }
 
-.mixify_btn {
-	background-color: none;
+.text-align-right {
+	text-align: right;
+}
+
+.btn {
+	font-size: 20px;
+	font-weight: 600;
 	color: var(--mixify-green);
+	background-color: none;
 	text-decoration: none;
 	border: none;
-	font-size: 0.8em;
-	font-weight: 700;
-	display: inline-block;
 	cursor: pointer;
+}
+
+.btn:disabled,
+.btn[disabled] {
+	color: var(--mixify-light-grey);
+	cursor: default;
+}
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.relogin {
+	text-decoration: none;
+	color: var(--mixify-green);
 }

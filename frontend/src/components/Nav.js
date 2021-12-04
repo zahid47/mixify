@@ -4,17 +4,26 @@ import logo from "../images/logo.svg";
 export default function Nav() {
 	return (
 		<div>
-			<header>
-				<a href="/">
+			<header className="header">
+				<a className="nav_item" href="/">
 					<img className="logo" src={logo} alt="mixify logo" />
 				</a>
 				<nav>
 					<ul className="nav_links">
 						<li>
-							<a href="https://github.com/zahid47/mixify">source</a>
+							<a
+								className="nav_item"
+								href="https://github.com/zahid47/mixify"
+								target="_blank"
+								rel="noreferrer"
+							>
+								source
+							</a>
 						</li>
 						{/* <li>
-							<a href="/">Contact</a>
+							<a className="nav_item" href="/" target="_blank" rel="noreferrer">
+								contact
+							</a>
 						</li> */}
 					</ul>
 				</nav>
