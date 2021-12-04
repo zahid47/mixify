@@ -1,6 +1,6 @@
 //TODO [optimization] get as much info as possible with /login and  /callback so we can make less api calls to spotify
 //TODO switch to spotify "Client credentials" or "Implicit grant" flow because i dont need refresh token
-//TODO [future] create a ML model to classify if a song X is a remix of song Y
+//TODO [future] create a ML model (LOL) to classify if a song X is a remix of song Y
 
 import express from "express";
 import axios from "axios";
