@@ -1,5 +1,5 @@
-//TODO [future] create a ML model (LOL) to classify if a song X is a remix of song Y
-//TODO user sessions
+//TODO [in far future maybe] create a ML model (LOL) to classify if a song X is a remix of song Y
+//TODO use sessions
 //TODO implement refresh tokens thing (use axios interceptors)
 //TODO change the search algo. instead of adding " remix" at then end, just search with the song name and exclude the og song
 //TODO account for state missmatch so we dont get XSRF-ed lol (first need to set up sessions)
