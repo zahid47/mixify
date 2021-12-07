@@ -11,16 +11,6 @@ router.get("/:playlist_id", (req, res) => {
 	const bread = req.query.bread;
 	const access_token = decrypt(bread);
 
-	const get_remixed_names = (names) => {
-		const remixedNames = [];
-
-		names.forEach((name) => {
-			remixedNames.push(name + " remix");
-		});
-
-		return remixedNames;
-	};
-
 	const playlist_url = "https://api.spotify.com/v1/me/playlists?limit=50";
 
 	const options = {
@@ -50,11 +40,12 @@ router.get("/:playlist_id", (req, res) => {
 				.get(track_url, options)
 				.then((response) => {
 					const track_names = [];
+					const track_ids = [];
 
 					response.data.items.forEach((item) => {
 						track_names.push(item.track.name);
+						track_ids.push(item.track.id);
 					});
-					const remixed_track_names = get_remixed_names(track_names);
 
 					///now search for remixed songs using spotify api
 					const search_url = "https://api.spotify.com/v1/search?";
@@ -80,7 +71,7 @@ router.get("/:playlist_id", (req, res) => {
 
 					const search_promises = [];
 
-					remixed_track_names.forEach((remixed_track_name) => {
+					track_names.forEach((remixed_track_name) => {
 						search_promises.push(
 							axios.get(search_url, get_search_options(remixed_track_name))
 						);
@@ -90,7 +81,13 @@ router.get("/:playlist_id", (req, res) => {
 						.then((search_results) => {
 							const initial_remixed_tracks_URIs = search_results.map(
 								(search_result) => {
-									const tracks = search_result.data.tracks.items;
+									const _tracks = search_result.data.tracks.items;
+
+									//filter out the original track
+									const tracks = _tracks.filter(
+										(_track) => !track_ids.includes(_track.id)
+									);
+
 									if (tracks.length > 0) {
 										return tracks[Math.floor(Math.random() * tracks.length)]
 											.uri;
