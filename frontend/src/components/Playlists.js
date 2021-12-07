@@ -9,7 +9,14 @@ export default function Playlists({ playlists, bread }) {
 					<div className="row">
 						{playlists.map((playlist) => {
 							return (
-								<Playlist playlist={playlist} bread={bread} key={playlist.id} />
+								<>
+									<Playlist
+										playlist={playlist}
+										bread={bread}
+										key={playlist.id}
+									/>
+									<hr />
+								</>
 							);
 						})}
 					</div>

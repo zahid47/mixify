@@ -8,6 +8,7 @@ export default function body() {
 				Remix your playlists, relive your favorite songs!
 			</h3>
 			<form action="https://mixify-api.herokuapp.com/login">
+			{/* <form action="http://localhost:8000/login"> */}
 				<input className="login_btn" type="submit" value="LOG IN" />
 			</form>
 		</div>

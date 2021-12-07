@@ -53,6 +53,9 @@ router.get("/", (req, res) => {
 				res
 					.status(302)
 					.redirect(`https://mixify.rocks/?bread=${encrypted_access_token}`);
+				// res
+				// 	.status(302)
+				// 	.redirect(`http://localhost:3000/?bread=${encrypted_access_token}`);
 				// res.json({ bread: encrypted_access_token });
 			})
 			.catch((err) => res.status(400).json({ error: "error authenticating" }));

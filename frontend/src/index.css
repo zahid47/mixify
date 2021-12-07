@@ -99,6 +99,11 @@ footer {
 	padding: 40px 0px 20px 0px;
 }
 
+footer a {
+	color: var(--mixify-green);
+	text-decoration: none;
+}
+
 /* welcome */
 
 .welcome_text {
@@ -152,19 +157,34 @@ footer {
 }
 
 .btn {
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 600;
 	color: var(--mixify-green);
 	background-color: none;
 	text-decoration: none;
-	border: none;
 	cursor: pointer;
+	border: 2px solid var(--mixify-dark-grey);
+	border-radius: 100px;
+	padding: 10px;
 }
 
 .btn:disabled,
 .btn[disabled] {
 	color: var(--mixify-light-grey);
 	cursor: default;
+	border: none;
+}
+
+.btn:hover:enabled {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--mixify-green);
+	background-color: var(--mixify-dark-grey);
+	text-decoration: none;
+	cursor: pointer;
+	border: 2px solid var(--mixify-dark-grey);
+	border-radius: 100px;
+	padding: 10px;
 }
 
 .wrapper {
@@ -173,9 +193,18 @@ footer {
 	justify-content: center;
 }
 
+.mixify_icon {
+	width: 20%;
+	height: 20%;
+}
+
 .relogin {
 	text-decoration: none;
 	color: var(--mixify-green);
+}
+
+hr {
+	border: 1px solid var(--mixify-dark-grey);
 }
 
 /* alert */
