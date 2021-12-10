@@ -18,6 +18,7 @@
 
 /frontend/public
 /frontend/yarn.lock
+/frontend/src/utils/ga_code.js
 
 /backend/node_modules
 /backend/.env
