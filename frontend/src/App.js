@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 import Playlists from "./components/Playlists";
 import Welcome from "./components/Welcome";
+import { base_url } from "./utils/base_url";
 
 function App() {
 	const [bread, setBread] = useState(null);
@@ -24,7 +25,7 @@ function App() {
 
 		const fetch_playlists = () => {
 			axios
-				.get(`https://mixify-api.herokuapp.com/playlists?bread=${bread}`)
+				.get(`${base_url}/playlists?bread=${bread}`)
 				.then((response) => {
 					const _playlists = response.data;
 					setPlaylists({ playlists: _playlists });
@@ -34,7 +35,7 @@ function App() {
 
 		const fetch_username = () => {
 			axios
-				.get(`https://mixify-api.herokuapp.com/user?bread=${bread}`)
+				.get(`${base_url}/user?bread=${bread}`)
 				.then((response) => {
 					const _username = response.data.username;
 					setUsername(_username);

@@ -17,12 +17,10 @@
 /frontend/yarn-error.log*
 
 /frontend/public
-/frontend/package-lock.json
 /frontend/yarn.lock
 
 /backend/node_modules
 /backend/.env
-/backend/package-lock.json
 /backend/utils/crypt.js
 
 mixify-ui-assets

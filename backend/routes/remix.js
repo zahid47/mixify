@@ -104,7 +104,7 @@ router.get("/:playlist_id", (req, res) => {
 							const data = {
 								name: `${playlist_name} mixified`,
 								public: true,
-								description: "created by mixify.rocks",
+								description: "created by https://mixify.rocks",
 							};
 							axios
 								.post(playlist_url, data, options)

@@ -8,7 +8,7 @@ export default function Footer() {
 				<span>
 					<a href="https://github.com/zahid47">scarecow</a>
 				</span>{" "}
-				/ mixify v0.2t
+				/ mixify v0.3 beta
 			</footer>
 		</div>
 	);

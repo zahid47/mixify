@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import Alert from "./Alert";
 import mixify_icon from "../images/mixify_icon.svg";
+import { base_url } from "../utils/base_url";
 
 export default function Playlist({ playlist, bread }) {
 	const [btn, setBtn] = useState(" mixify");
@@ -20,9 +21,7 @@ export default function Playlist({ playlist, bread }) {
 						setBtn(" ...");
 
 						axios
-							.get(
-								`https://mixify-api.herokuapp.com/remix/${playlist.id}?bread=${bread}`
-							)
+							.get(`${base_url}/remix/${playlist.id}?bread=${bread}`)
 							.then(() => {
 								setBtn(" mixified!");
 								setDisabled(true);

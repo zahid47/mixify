@@ -1,4 +1,5 @@
 import React from "react";
+import { base_url } from "../utils/base_url";
 
 export default function body() {
 	return (
@@ -7,8 +8,7 @@ export default function body() {
 			<h3 className="login_desc">
 				Remix your playlists, relive your favorite songs!
 			</h3>
-			<form action="https://mixify-api.herokuapp.com/login">
-			{/* <form action="http://localhost:8000/login"> */}
+			<form action={`${base_url}/login`}>
 				<input className="login_btn" type="submit" value="LOG IN" />
 			</form>
 		</div>
