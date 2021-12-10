@@ -7,7 +7,7 @@ import Playlists from "./components/Playlists";
 import Welcome from "./components/Welcome";
 import { base_url } from "./utils/base_url";
 import ReactGa from "react-ga";
-import ga_code from "./utils/ga_code";
+import { ga_code } from "./utils/ga_code";
 
 function App() {
 	const [bread, setBread] = useState(null);
