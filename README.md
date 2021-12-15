@@ -1,10 +1,10 @@
-# mixify
+# Mixify
 
 An app that takes your Spotify playlist and creates another one with remixes of the same songs.
 
 https://mixify.rocks
 
-### Environment Variables Required:
+<!-- ### Environment Variables Required:
 #### Backend:
 - `CLIENT_ID` (Spotify client id)
 - `CLIENT_SECRET` (Spotify client secret)
@@ -34,6 +34,6 @@ npm dev
 ```
 cd frontend
 npm dev
-```
+``` -->
 
 Idea by [Divide-By-0](https://github.com/Divide-By-0/app-ideas-people-would-use)
