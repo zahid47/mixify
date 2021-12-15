@@ -20,11 +20,6 @@ export default function Nav() {
 								source
 							</a>
 						</li>
-						{/* <li>
-							<a className="nav_item" href="/" target="_blank" rel="noreferrer">
-								contact
-							</a>
-						</li> */}
 					</ul>
 				</nav>
 			</header>

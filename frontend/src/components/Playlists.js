@@ -1,6 +1,6 @@
 import React from "react";
-import { base_url } from "../utils/base_url";
 import Playlist from "./Playlist";
+import { base_url } from "../utils/base_url";
 
 export default function Playlists({ playlists, bread }) {
 	return (

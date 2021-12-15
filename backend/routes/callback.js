@@ -1,17 +1,18 @@
 import express from "express";
 import axios from "axios";
 import { Buffer } from "buffer";
+import dotenv from "dotenv";
 import { encrypt } from "../utils/crypt.js";
 import { serialize } from "../utils/serialize.js";
-import dotenv from "dotenv";
 
 dotenv.config();
 
 const router = express.Router();
-const base_url = process.env.base_url;
-const client_id = process.env.client_id;
-const client_secret = process.env.client_secret;
+const base_url = process.env.BASE_URL;
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
 const redirect_uri = `${base_url}/callback`;
+const frontend_url = process.env.FRONTEND_URL;
 
 router.get("/", (req, res) => {
 	const code = req.query.code || null;
@@ -20,8 +21,8 @@ router.get("/", (req, res) => {
 
 	if (state === null) {
 		res.status(400).json({ error: "state missing" });
-		// } else if (state !== req.session.state) {
-		// 	res.status(400).json({ error: "state mismatch" });
+	} else if (state !== req.session.state) {
+		res.status(400).json({ error: "state mismatch" });
 	} else if (error != null) {
 		res.status(400).json({ error: error });
 	} else {
@@ -52,11 +53,7 @@ router.get("/", (req, res) => {
 
 				res
 					.status(302)
-					.redirect(`https://mixify.rocks/?bread=${encrypted_access_token}`);
-				// res
-				// 	.status(302)
-				// 	.redirect(`http://localhost:3000/?bread=${encrypted_access_token}`);
-				// res.json({ bread: encrypted_access_token });
+					.redirect(`${frontend_url}/?bread=${encrypted_access_token}`);
 			})
 			.catch((err) => res.status(400).json({ error: "error authenticating" }));
 	}

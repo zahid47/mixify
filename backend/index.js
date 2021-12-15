@@ -1,11 +1,9 @@
-//TODO [far future] create a ML model (LOL) to classify if a song X is a remix of song Y
-//TODO implement refresh tokens thing (use axios interceptors)
-//TODO use sessions to store bread
-//TODO account for state missmatch so we dont get XSRF-ed lol (first need to set up sessions)
+//TODO create a ML model(!!!) to classify if song Y is a remix of song X
 
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import session from "express-session";
 
 import login from "./routes/login.js";
 import callback from "./routes/callback.js";
@@ -20,13 +18,24 @@ const PORT = process.env.PORT || 8000;
 
 app.use(
 	cors({
-		origin: process.env.frontend_url,
+		origin: process.env.FRONTEND_URL,
 		methods: ["GET"],
 	})
 );
 
+app.use(
+	session({
+		secret: process.env.SESSION_SECRET,
+		resave: false,
+		saveUninitialized: true,
+		cookie: {
+			maxAge: 3600000,
+		},
+	})
+);
+
 app.get("/", (req, res) => {
-	res.status(200).json({ msg: "welcome to mixify v0.3 beta" });
+	res.status(200).json({ msg: "welcome to mixify v1" });
 });
 
 app.use("/login", login);

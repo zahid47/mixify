@@ -1,7 +1,7 @@
 {
 	"name": "mixify-frontend",
 	"homepage": "https://mixify.rocks/",
-	"version": "0.1t",
+	"version": "1.0",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.4",

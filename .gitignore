@@ -1,12 +1,9 @@
 /frontend/node_modules
 /frontend/.pnp
 /frontend/.pnp.js
-
 /frontend/coverage
-
 /frontend/build
 /frontend/build.zip
-
 /frontend/.DS_Store
 /frontend/.env.local
 /frontend/.env.development.local
@@ -15,13 +12,12 @@
 /frontend/npm-debug.log*
 /frontend/yarn-debug.log*
 /frontend/yarn-error.log*
-
 /frontend/public
 /frontend/yarn.lock
 /frontend/src/utils/ga_code.js
 
 /backend/node_modules
 /backend/.env
-/backend/utils/crypt.js
+/backend/yarn.lock
 
 mixify-ui-assets

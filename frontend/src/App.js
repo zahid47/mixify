@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ReactGa from "react-ga";
+
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import Playlists from "./components/Playlists";
 import Welcome from "./components/Welcome";
 import { base_url } from "./utils/base_url";
-import ReactGa from "react-ga";
 import { ga_code } from "./utils/ga_code";
 
 function App() {
