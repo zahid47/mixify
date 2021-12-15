@@ -35,7 +35,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-	res.status(200).json({ msg: "welcome to mixify v1" });
+	res.status(200).json({ msg: "welcome to mixify v1.0" });
 });
 
 app.use("/login", login);
