@@ -2,6 +2,7 @@ import express from "express";
 import axios from "axios";
 import { decrypt } from "../utils/crypt.js";
 import dotenv from "dotenv";
+import get_remixed_search_term from "../utils/get_remixed_search_term.js";
 
 dotenv.config();
 
@@ -39,12 +40,17 @@ router.get("/:playlist_id", (req, res) => {
 			axios
 				.get(track_url, options)
 				.then((response) => {
-					const track_names = [];
-					const track_ids = [];
+					const track_names_with_artist_name = [];
+					const unique_track_ids = []; // (track_id:album_id)
 
 					response.data.items.forEach((item) => {
-						track_names.push(item.track.name);
-						track_ids.push(item.track.id);
+						track_names_with_artist_name.push(
+							get_remixed_search_term(
+								item.track.name,
+								item.track.artists[0].name
+							)
+						);
+						unique_track_ids.push(`${item.track.album.id}:${item.track.id}`);
 					});
 
 					///now search for remixed songs using spotify api
@@ -53,7 +59,7 @@ router.get("/:playlist_id", (req, res) => {
 					const get_query_params_for_search = (
 						query,
 						type = "track",
-						limit = 3,
+						limit = 1,
 						offset = 0
 					) => {
 						return { type: type, limit: limit, offset: offset, query: query };
@@ -71,7 +77,7 @@ router.get("/:playlist_id", (req, res) => {
 
 					const search_promises = [];
 
-					track_names.forEach((remixed_track_name) => {
+					track_names_with_artist_name.forEach((remixed_track_name) => {
 						search_promises.push(
 							axios.get(search_url, get_search_options(remixed_track_name))
 						);
@@ -85,9 +91,13 @@ router.get("/:playlist_id", (req, res) => {
 
 									//filter out the original track
 									const tracks = _tracks.filter(
-										(_track) => !track_ids.includes(_track.id)
+										(_track) =>
+											!unique_track_ids.includes(
+												`${_track.album.id}:${_track.id}`
+											)
 									);
 
+									//randomizing is useless now as im limiting the search to only 1
 									if (tracks.length > 0) {
 										return tracks[Math.floor(Math.random() * tracks.length)]
 											.uri;

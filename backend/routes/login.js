@@ -9,6 +9,9 @@ const base_url = process.env.BASE_URL;
 const client_id = process.env.CLIENT_ID;
 const redirect_uri = `${base_url}/callback`;
 const state = randomBytes(6).toString("hex");
+// const scope =
+// 	"user-library-read playlist-modify-private playlist-read-private playlist-modify-public playlist-read-collaborative";
+
 const scope = "playlist-modify-public";
 
 router.get("/", (req, res) => {

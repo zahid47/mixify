@@ -1,3 +1,5 @@
+//TODO move to the implicit grant flow as we dont need the refresh token
+
 import express from "express";
 import axios from "axios";
 import { Buffer } from "buffer";
@@ -50,7 +52,8 @@ router.get("/", (req, res) => {
 			.then((response) => {
 				const access_token = response.data.access_token;
 				const encrypted_access_token = encrypt(access_token);
-
+				// res.json({ access_token: access_token });
+				// res.json({ encrypted_access_token: encrypted_access_token });
 				res
 					.status(302)
 					.redirect(`${frontend_url}/?bread=${encrypted_access_token}`);
