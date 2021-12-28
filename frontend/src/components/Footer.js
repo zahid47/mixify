@@ -20,7 +20,7 @@ export default function Footer() {
 						scarecow
 					</a>
 				</span>{" "}
-				/ Mixify v1.0
+				/ Mixify v1.1
 			</footer>
 		</div>
 	);
