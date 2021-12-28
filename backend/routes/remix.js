@@ -1,3 +1,5 @@
+//TODO remove randomness when selecting a remix as we dont need it anymore
+
 import express from "express";
 import axios from "axios";
 import { decrypt } from "../utils/crypt.js";
@@ -26,14 +28,15 @@ router.get("/:playlist_id", (req, res) => {
 		.get(playlist_url, options)
 		.then((response) => {
 			const playlists = response.data.items;
+			const playlist_id = req.params.playlist_id;
 
 			//get tracks href and name of playlist with :playlist_id
 			const track_url = playlists.filter(
-				(playlist) => playlist.id === req.params.playlist_id
+				(playlist) => playlist.id === playlist_id
 			)[0].tracks.href;
 
 			const playlist_name = playlists.filter(
-				(playlist) => playlist.id === req.params.playlist_id
+				(playlist) => playlist.id === playlist_id
 			)[0].name;
 
 			///send req to track_url to get tracks info of that playlist
