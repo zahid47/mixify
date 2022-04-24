@@ -1,7 +1,8 @@
 <div align="center">
-
+  <br>
+  <br>
   <img src="assets/logo.svg" alt="logo" width="200" height="auto" />
-  
+  <br><br>
   <p>
     An app that takes your Spotify playlist and creates another one with remixes of the same songs 
   </p>
