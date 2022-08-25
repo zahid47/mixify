@@ -21,3 +21,4 @@
 /backend/yarn.lock
 
 mixify-ui-assets
+.env
