@@ -1,5 +1,3 @@
-//TODO create a ML model(!!!) to classify if song Y is a remix of song X
-
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
