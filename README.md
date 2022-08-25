@@ -133,6 +133,7 @@ Start the server
 
 - [ ] Keep the user logged in using refresh tokens
 - [ ] Add support for liked songs
+- [ ] Create an ML model to classify if song X is a remix of song Y
 
 <!-- Contact -->
 
